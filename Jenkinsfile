@@ -7,6 +7,12 @@ pipeline {
                 echo "$GIT_BRANCH"
             }
         }
+	  stage('Verify Workspace') {
+            steps {
+                echo "${workspace}"
+            }
+        }
+
 	  stage('Clean workspace') {
             steps {
                 cleanWs()
