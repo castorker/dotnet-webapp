@@ -14,7 +14,7 @@ pipeline {
         }
 	  stage('List Workspace') {
             steps {
-                sh(script: "ls -la '${workspace}'"
+                sh (script: "ls -la '${workspace}'")
             }
         }
 	  stage('Clean workspace') {
