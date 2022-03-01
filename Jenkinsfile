@@ -12,7 +12,11 @@ pipeline {
                 echo "${workspace}"
             }
         }
-
+	  stage('List Workspace') {
+            steps {
+                bat "dir ${workspace}"
+            }
+        }
 	  stage('Clean workspace') {
             steps {
                 cleanWs()
