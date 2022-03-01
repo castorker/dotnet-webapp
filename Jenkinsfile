@@ -17,12 +17,19 @@ pipeline {
                 sh (script: "ls -la '${workspace}'")
             }
         }
-	  stage('Clean workspace') {
-            steps {
-                cleanWs()
-		    echo 'Clean workspace done!'
+//	  stage('Clean workspace') {
+//            steps {
+//                cleanWs()
+//		    echo 'Clean workspace done!'
+//            }
+//        }
+	
+        stage('Restore packages') {
+           steps{
+               sh 'dotnet restore dotnet-webapp.csproj'
             }
-        }
+         }
+
         stage('Build') {
             steps {
                 echo 'Building...'
