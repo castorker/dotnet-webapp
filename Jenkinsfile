@@ -24,9 +24,15 @@ pipeline {
 //            }
 //        }
 	
-        stage('Restore packages') {
+//        stage('Restore packages') {
+//           steps{
+//		   sh (script: "dotnet restore '${workspace}'/dotnet-webapp.csproj")
+//            }
+//        }
+
+	  stage('Clean'){
            steps{
-		   sh (script: "dotnet restore '${workspace}'/dotnet-webapp.csproj")
+               sh 'dotnet clean dotnet-webapp.csproj --configuration Release'
             }
          }
 
