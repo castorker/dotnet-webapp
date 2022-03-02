@@ -26,7 +26,7 @@ pipeline {
 	
         stage('Restore packages') {
            steps{
-		   sh (script: "dotnetRestore '${workspace}'//dotnet-webapp.csproj")
+		   sh (script: "dotnet restore '${workspace}'/dotnet-webapp.csproj")
             }
          }
 
