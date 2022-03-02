@@ -32,7 +32,7 @@ pipeline {
 
 	  stage('Clean'){
            steps{
-               sh 'dotnet clean dotnet-webapp.csproj --configuration Release'
+               sh 'dotnetClean dotnet-webapp.csproj --configuration Release'
             }
          }
 
